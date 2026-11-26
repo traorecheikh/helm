@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" type="text/markdown" href="%BASE_URL%llms.txt" title="llms.txt" />
+    <!--head-->
+    <script>
+      try {
+        var saved = localStorage.getItem('helm-theme')
+        var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.classList.toggle('dark', dark)
+        var lang = localStorage.getItem('helm-lang') || navigator.language.slice(0, 2)
+        if (lang === 'fr' && location.pathname === '%BASE_URL%') location.replace('%BASE_URL%fr/' + location.hash)
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app--></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

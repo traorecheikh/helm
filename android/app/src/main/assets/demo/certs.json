@@ -1,0 +1,7 @@
+[
+{"domain":"atlas.example.com","issuer":"Let's Encrypt","daysLeft":61.0,"routed":true,"autoRenew":true,"renewsInDays":31.0},
+{"domain":"api.example.net","issuer":"Let's Encrypt","daysLeft":48.0,"routed":true,"autoRenew":true,"renewsInDays":18.0},
+{"domain":"mail.example.net","issuer":"Let's Encrypt","daysLeft":33.0,"routed":true,"autoRenew":true,"renewsInDays":3.0},
+{"domain":"notes.example.com","issuer":"Let's Encrypt","daysLeft":57.0,"routed":true,"autoRenew":true,"renewsInDays":27.0},
+{"domain":"status.example.com","issuer":"Let's Encrypt","daysLeft":72.0,"routed":true,"autoRenew":true,"renewsInDays":42.0}
+]

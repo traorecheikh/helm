@@ -1,0 +1,3 @@
+[
+{"destinationId":"demo-dest-s3","name":"Offsite backups","provider":"S3","bucket":"demo-backups"}
+]

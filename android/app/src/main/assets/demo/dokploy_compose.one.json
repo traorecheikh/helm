@@ -1,0 +1,10 @@
+{
+"name":"{{name}}",
+"appName":"{{appName}}",
+"description":null,
+"env":"TZ=UTC",
+"composeStatus":"{{status}}",
+"sourceType":"git",
+"customGitUrl":"https://git.example.com/demo/{{slug}}.git",
+"branch":"main"
+}

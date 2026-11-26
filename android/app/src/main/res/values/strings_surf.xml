@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="surf_last12">Last 12 h</string>
+    <string name="surf_quiet_until">Quiet until %1$s</string>
+</resources>

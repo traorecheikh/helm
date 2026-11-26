@@ -1,0 +1,4 @@
+[
+  {"id": 1, "uuid": "p1abc", "name": "Shop", "description": null, "team_id": 0},
+  {"id": 2, "uuid": "p2def", "name": "Blog", "description": "Personal", "team_id": 0, "unknown_field": {"x": 1}}
+]

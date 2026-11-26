@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="apps_all">Tout</string>
+    <string name="apps_issues">À traiter</string>
+    <string name="apps_data">Bases</string>
+    <string name="apps_failed">%1$d en échec</string>
+    <string name="svc_config">Config</string>
+    <string name="svc_data">Données</string>
+    <string name="svc_warnings">Alertes</string>
+    <string name="svc_no_container">Aucun conteneur</string>
+    <string name="svc_no_domain">Aucun domaine</string>
+    <string name="svc_no_vars">Aucune variable</string>
+    <string name="svc_notes">Notes</string>
+    <string name="svc_add">Ajouter</string>
+    <string name="svc_memory">Mémoire</string>
+    <string name="svc_cpu">CPU</string>
+    <string name="svc_memory_mb">Mémoire (Mo)</string>
+    <string name="svc_cpu_cores">CPU (cœurs)</string>
+    <string name="svc_zero">Arrête l\'app</string>
+    <string name="svc_saved_redeploy">Redéployer pour appliquer</string>
+    <string name="svc_show_values">Afficher les valeurs</string>
+    <string name="svc_truncated">Tronqué</string>
+    <string name="svc_endpoint">Endpoint S3</string>
+    <string name="svc_add_destination">Destination</string>
+    <string name="svc_off">Désactivée</string>
+    <string name="svc_backup">Sauvegarde</string>
+    <string name="svc_no_backup">Sans sauvegarde</string>
+    <string name="svc_stop_line">Données conservées</string>
+</resources>

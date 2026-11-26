@@ -1,0 +1,5 @@
+[
+{"at":"{{ts-40m}}","firstAt":"{{ts-2h}}","kind":"ssh","user":"deploy","method":"publickey","ip":"192.0.2.10","country":"FR","count":3},
+{"at":"{{ts-5h}}","kind":"app","user":"owner@example.com","method":"password","ip":"192.0.2.10","country":"FR","count":1},
+{"at":"{{ts-27h}}","kind":"ssh","user":"deploy","method":"publickey","ip":"198.51.100.200","country":"NL","count":1}
+]

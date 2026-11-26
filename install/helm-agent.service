@@ -1,0 +1,22 @@
+[Unit]
+Description=Helm agent
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+EnvironmentFile=/etc/helm-agent/env
+Environment=PYTHONUNBUFFERED=1
+ExecStartPre=-/usr/sbin/nft -f /etc/helm-agent/guard.nft
+ExecStart=/usr/bin/python3 -I /usr/local/bin/helm-agent
+Restart=always
+RestartSec=5
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectHome=yes
+ProtectControlGroups=yes
+ProtectClock=yes
+LockPersonality=yes
+RestrictSUIDSGID=yes
+
+[Install]
+WantedBy=multi-user.target

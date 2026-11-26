@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Helm</string>
+    <string name="open_helm_on_phone">Ouvrir Helm sur le téléphone</string>
+    <string name="down_count">%1$d en panne</string>
+    <string name="all_running">Tout tourne</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="diag_title">Helm crashed</string>
+    <string name="diag_copy">Copy</string>
+    <string name="diag_share">Share</string>
+    <string name="diag_close">Close</string>
+</resources>

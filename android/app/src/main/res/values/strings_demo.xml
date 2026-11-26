@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="demo_try">Try the demo</string>
+    <string name="demo_exit">Exit demo</string>
+    <string name="demo_server">Demo server</string>
+</resources>

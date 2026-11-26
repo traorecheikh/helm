@@ -1,0 +1,4 @@
+[
+{"path":"/etc/ssh/sshd_config","changes":[{"at":"{{ts-6d}}","sha":"4be1f9c","added":2,"removed":1}]},
+{"path":"/etc/hosts","changes":[{"at":"{{ts-19d}}","sha":"a90d3e7","added":1,"removed":0}]}
+]

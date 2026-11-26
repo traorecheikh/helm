@@ -1,0 +1,3 @@
+[
+{"domainId":"demo-dom-{{id}}","host":"{{slug}}.example.com","https":true,"port":3000,"path":"/","certificateType":"letsencrypt"}
+]

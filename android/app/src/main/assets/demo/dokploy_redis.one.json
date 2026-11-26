@@ -1,0 +1,7 @@
+{
+"name":"{{name}}",
+"appName":"{{appName}}",
+"applicationStatus":"{{status}}",
+"dockerImage":"redis:7-alpine",
+"replicas":1
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dep_stop">Stop</string>
+    <string name="dep_stop_title">Stop deploy?</string>
+    <string name="dep_stop_body">Build cancelled</string>
+    <string name="dep_stop_hold">Hold to stop</string>
+    <string name="dep_rollback_off">No rollback</string>
+    <string name="dep_compare">Compare</string>
+    <string name="dep_same">Same commit</string>
+    <string name="dep_branch_note">Service switches branch</string>
+    <string name="dep_live_hash">Live · %1$s</string>
+    <string name="dep_checking">Checking…</string>
+    <string name="dep_message">Message</string>
+</resources>

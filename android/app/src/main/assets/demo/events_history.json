@@ -1,0 +1,15 @@
+[
+{"id":"demo-ev-1","at":"{{ts-4m}}","type":"ban","ip":"203.0.113.20","reason":"SSH brute force · 72×","reasonFr":"Tentatives SSH répétées · 72×","source":"web"},
+{"id":"demo-ev-2","at":"{{ts-199m}}","type":"dokploy","kind":"deploy","title":"Atlas Web deployed","titleFr":"Atlas Web déployé","message":"Fix checkout total rounding","messageFr":"Fix checkout total rounding"},
+{"id":"demo-ev-3","at":"{{ts-4h}}","type":"ban","ip":"203.0.113.86","reason":"WordPress login probing · 45×","reasonFr":"Sondage de connexion WordPress · 45×","source":"ssh"},
+{"id":"demo-ev-4","at":"{{ts-339m}}","type":"dokploy","kind":"deploy","title":"Orbit Core deployed","titleFr":"Orbit Core déployé","message":"Add /v2/usage endpoint","messageFr":"Add /v2/usage endpoint"},
+{"id":"demo-ev-5","at":"{{ts-7h}}","type":"ban","ip":"203.0.113.119","reason":"Probing for exposed files · 60×","reasonFr":"Recherche de fichiers exposés · 60×","source":"web"},
+{"id":"demo-ev-6","at":"{{ts-9h}}","type":"system","kind":"cert_renewed","title":"Certificate renewed","titleFr":"Certificat renouvelé","message":"atlas.example.com","messageFr":"atlas.example.com"},
+{"id":"demo-ev-7","at":"{{ts-11h}}","type":"ban","ip":"192.0.2.174","reason":"WordPress login probing · 70×","reasonFr":"Sondage de connexion WordPress · 70×","source":"mail"},
+{"id":"demo-ev-8","at":"{{ts-12h}}","type":"dokploy","kind":"deploy","title":"Status Page deployed","titleFr":"Status Page déployé","message":"Add incident history","messageFr":"Add incident history"},
+{"id":"demo-ev-9","at":"{{ts-15h}}","type":"system","kind":"backup_done","title":"Backup finished","titleFr":"Sauvegarde terminée","message":"atlas-db, orbit-db","messageFr":"atlas-db, orbit-db"},
+{"id":"demo-ev-10","at":"{{ts-19h}}","type":"ban","ip":"192.0.2.40","reason":"SSH brute force · 43×","reasonFr":"Tentatives SSH répétées · 43×","source":"web"},
+{"id":"demo-ev-11","at":"{{ts-26h}}","type":"dokploy","kind":"deploy","title":"Atlas Worker deployed","titleFr":"Atlas Worker déployé","message":"Retry failed webhooks with backoff","messageFr":"Retry failed webhooks with backoff"},
+{"id":"demo-ev-12","at":"{{ts-52h}}","type":"dokploy","kind":"build_error","title":"Build failed: Orbit Core","titleFr":"Échec du build : Orbit Core","message":"Cannot find module './auth/session'","messageFr":"Cannot find module './auth/session'"},
+{"id":"demo-ev-13","at":"{{ts-57h}}","type":"dokploy","kind":"deploy","title":"Webmail deployed","titleFr":"Webmail déployé","message":"Update login screen copy","messageFr":"Update login screen copy"}
+]

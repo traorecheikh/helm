@@ -1,0 +1,11 @@
+{
+"geo":{"active":true,"ranges":4210,"requested":1},
+"lowTrust":{"wanted":true,"active":true},
+"originLock":{"wanted":false,"active":false},
+"panic":{"active":false},
+"sshLock":{"active":true,"entries":2},
+"agentPort":{"allowed":["198.51.100.0/24"],"active":true},
+"fail2ban":{"jails":[{"name":"sshd","banned":11,"totalBanned":214,"failing":3,"ips":["203.0.113.20","198.51.100.64","192.0.2.108"]},{"name":"traefik-scan","banned":19,"totalBanned":530,"failing":5,"ips":["198.51.100.31","192.0.2.42","192.0.2.75"]},{"name":"postfix","banned":4,"totalBanned":61,"failing":0,"ips":[]}]},
+"crowdsec":{"installed":false},
+"exposure":{"ports":[{"port":22,"proto":"tcp","bind":"0.0.0.0","owner":"sshd","restricted":true},{"port":80,"proto":"tcp","bind":"0.0.0.0","owner":"traefik","via":"docker"},{"port":443,"proto":"tcp","bind":"0.0.0.0","owner":"traefik","via":"docker"},{"port":25,"proto":"tcp","bind":"0.0.0.0","owner":"postfix","via":"docker"}]}
+}

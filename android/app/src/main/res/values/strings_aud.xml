@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aud_short">Audit</string>
+    <string name="aud_title">Vulnerabilities</string>
+    <plurals name="aud_critical">
+        <item quantity="one">%d critical</item>
+        <item quantity="other">%d critical</item>
+    </plurals>
+    <plurals name="aud_high">
+        <item quantity="one">%d high</item>
+        <item quantity="other">%d high</item>
+    </plurals>
+    <string name="aud_scan">Scan now</string>
+    <string name="aud_scanning">Scanning</string>
+    <string name="aud_scan_started">Scan started</string>
+    <string name="aud_missing">Trivy missing</string>
+    <string name="aud_none">No issues</string>
+    <string name="aud_host">Server</string>
+    <string name="aud_patch">Patch host</string>
+    <string name="aud_patch_hold">Hold to patch</string>
+    <string name="aud_redeploy_hold">Hold to redeploy</string>
+    <string name="aud_auto">Auto-fix</string>
+    <string name="aud_auto_hold">Hold to enable</string>
+    <string name="aud_auto_hold_data">Hold: keeps data</string>
+    <string name="aud_db">Database</string>
+    <string name="aud_fix">Fix</string>
+    <string name="aud_auto_off">Auto-fix off</string>
+    <string name="aud_last">Last fix</string>
+    <string name="aud_trend">30 days</string>
+    <string name="aud_db_error">DB update failed</string>
+    <string name="aud_kernel">New kernel</string>
+    <string name="aud_patching">Auto patch</string>
+    <string name="aud_on">On</string>
+    <string name="aud_off">Off</string>
+    <string name="aud_last_run">Last run</string>
+    <string name="aud_kept">Held back</string>
+    <string name="aud_failed">Failed</string>
+    <string name="aud_skipped">Skipped</string>
+    <string name="aud_done">Done</string>
+</resources>

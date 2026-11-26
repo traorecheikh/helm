@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="set_servers">Serveurs</string>
+    <string name="set_owner">Propriétaire</string>
+    <string name="set_member">Membre</string>
+    <string name="set_a_build">Builds</string>
+    <string name="set_a_server">Serveur</string>
+    <string name="set_a_backup">Sauvegardes</string>
+    <string name="set_a_ban">Bannissements</string>
+    <string name="set_a_activity">Activité</string>
+    <string name="set_security">Sécurité</string>
+    <string name="set_look">Apparence</string>
+    <string name="set_steps">Étapes</string>
+    <string name="find_hint">Rechercher</string>
+    <string name="find_none">Aucun résultat</string>
+    <string name="find_deploys">Déploiements</string>
+    <string name="setup_start">Commencer</string>
+    <string name="setup_connect">Connexion</string>
+    <string name="setup_address">Adresse</string>
+    <string name="setup_pair">Associer</string>
+    <string name="setup_wait">En attente</string>
+</resources>

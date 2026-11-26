@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ml_f_ssh">SSH brute</string>
+    <string name="ml_f_secrets">Secret hunt</string>
+    <string name="ml_f_php">PHP scan</string>
+    <string name="ml_f_vuln">Vuln probe</string>
+    <string name="ml_f_brute">Login brute</string>
+    <string name="ml_f_flood">Flood</string>
+    <string name="ml_f_repeat">Repeat</string>
+    <string name="ml_f_noise">Noise</string>
+    <string name="ml_f_visitor">Visitor</string>
+    <string name="ml_f_you">You</string>
+    <string name="ml_you_q">You?</string>
+    <string name="ml_probing">Probing</string>
+    <string name="ml_campaign">%1$d IPs</string>
+    <string name="ml_c_oom">Out of memory</string>
+    <string name="ml_c_env">Missing env</string>
+    <string name="ml_c_port">Port taken</string>
+    <string name="ml_c_deps">Install error</string>
+    <string name="ml_c_build">Build error</string>
+    <string name="ml_c_disk">Disk full</string>
+    <string name="ml_c_registry">Registry auth</string>
+    <string name="ml_c_health">Health timeout</string>
+    <string name="ml_fix_redeploy">Redeploy</string>
+    <string name="ml_fix_env">Open env</string>
+    <string name="ml_fix_resources">Resources</string>
+    <string name="ml_fix_server">Clean up</string>
+    <string name="ml_anom">%1$s %2$s× usual</string>
+    <string name="ml_anom_at">Usual %1$s · %2$s</string>
+    <string name="ml_anom_any">Usual · %1$s</string>
+    <string name="ml_anom_chip">%1$s %2$s×</string>
+    <string name="ml_ping">%1$s ping</string>
+    <string name="ml_grouped">Grouped</string>
+    <plurals name="ml_distinct">
+        <item quantity="one">%1$d message</item>
+        <item quantity="other">%1$d messages</item>
+    </plurals>
+    <plurals name="ml_quiet">
+        <item quantity="one">%1$d quiet</item>
+        <item quantity="other">%1$d quiet</item>
+    </plurals>
+    <string name="ml_ai">On-device AI</string>
+    <string name="ml_ai_ready">Ready</string>
+    <string name="ml_ai_download">Download</string>
+    <string name="ml_ai_downloading">Downloading</string>
+    <string name="ml_ai_unavailable">Unavailable</string>
+    <string name="ml_explain">Explain</string>
+    <string name="ml_ai_busy">Try later</string>
+    <string name="ml_ai_failed">No answer</string>
+</resources>

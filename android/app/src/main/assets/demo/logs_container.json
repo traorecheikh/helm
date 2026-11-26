@@ -1,0 +1,14 @@
+[
+{"line":"INFO  server listening on :3000"},
+{"line":"INFO  GET /api/items 200 18ms"},
+{"line":"INFO  GET /api/orders 200 24ms"},
+{"line":"INFO  POST /api/cart 202 9ms"},
+{"line":"WARN  slow query on usage_daily (212ms)"},
+{"line":"INFO  GET /health 200 1ms"},
+{"line":"INFO  GET /api/items 200 15ms"},
+{"line":"INFO  POST /api/cart 202 11ms"},
+{"line":"INFO  cache hit ratio 0.93"},
+{"line":"INFO  GET /api/items/42 200 21ms"},
+{"line":"INFO  job reports.rollup finished in 2.4s"},
+{"line":"INFO  GET /api/items 200 17ms"}
+]

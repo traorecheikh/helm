@@ -1,0 +1,7 @@
+[
+{"host":"atlas.example.com","a":["203.0.113.10"],"status":"server","serverIp":"203.0.113.10"},
+{"host":"api.example.net","a":["203.0.113.10"],"status":"server","serverIp":"203.0.113.10"},
+{"host":"mail.example.net","a":["203.0.113.10"],"status":"server","serverIp":"203.0.113.10"},
+{"host":"notes.example.com","a":["203.0.113.10"],"status":"server","serverIp":"203.0.113.10"},
+{"host":"status.example.com","a":["198.51.100.53"],"status":"proxied","serverIp":"203.0.113.10"}
+]

@@ -1,0 +1,11 @@
+{
+"logFound":true,
+"lastInboundAt":"{{ts-4m}}",
+"accepted24h":412,
+"rejected24h":37,
+"delivered24h":268,
+"outboundFailed24h":0,
+"authBans24h":3,
+"authFailures24h":21,
+"recentRejections":[{"at":"{{ts-47m}}","event":"reject","ip":"198.51.100.60","domain":"example.net","detail":"Relay access denied"},{"at":"{{ts-94m}}","event":"reject","ip":"198.51.100.69","domain":"example.net","detail":"Relay access denied"},{"at":"{{ts-141m}}","event":"reject","ip":"198.51.100.78","domain":"example.net","detail":"Relay access denied"},{"at":"{{ts-188m}}","event":"reject","ip":"198.51.100.87","domain":"example.net","detail":"Relay access denied"}]
+}

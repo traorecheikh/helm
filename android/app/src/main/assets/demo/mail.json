@@ -1,0 +1,4 @@
+{
+"queue":{"size":2,"deferred":0},
+"domains":[{"name":"example.net","mx":{"ok":true,"value":"ok"},"spf":{"ok":true,"value":"ok"},"dmarc":{"ok":true,"value":"ok"},"dkim":{"ok":true,"value":"ok"}}]
+}

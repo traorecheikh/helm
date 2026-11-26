@@ -1,0 +1,5 @@
+[
+{"scheduleId":"demo-sch-1","name":"Nightly reindex","cronExpression":"0 2 * * *","enabled":true,"timezone":"UTC","serviceName":"Atlas Search","projectName":"Atlas Web","deployments":[{"status":"done","createdAt":"{{iso-15h}}"},{"status":"done","createdAt":"{{iso-39h}}"}]},
+{"scheduleId":"demo-sch-2","name":"Weekly cleanup","cronExpression":"0 4 * * 0","enabled":true,"timezone":"UTC","serviceName":"Atlas Worker","projectName":"Atlas Web","deployments":[{"status":"done","createdAt":"{{iso-107h}}"}]},
+{"scheduleId":"demo-sch-3","name":"Usage rollup","cronExpression":"*/30 * * * *","enabled":true,"timezone":"UTC","serviceName":"Orbit Core","projectName":"Orbit API","deployments":[{"status":"done","createdAt":"{{iso-12m}}"}]}
+]

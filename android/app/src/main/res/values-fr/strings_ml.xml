@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ml_f_ssh">Force SSH</string>
+    <string name="ml_f_secrets">Vol secrets</string>
+    <string name="ml_f_php">Scan PHP</string>
+    <string name="ml_f_vuln">Sonde faille</string>
+    <string name="ml_f_brute">Force login</string>
+    <string name="ml_f_flood">Flot</string>
+    <string name="ml_f_repeat">Récidive</string>
+    <string name="ml_f_noise">Bruit</string>
+    <string name="ml_f_visitor">Visiteur</string>
+    <string name="ml_f_you">Vous</string>
+    <string name="ml_you_q">Vous ?</string>
+    <string name="ml_probing">Sondage</string>
+    <string name="ml_campaign">%1$d IP</string>
+    <string name="ml_c_oom">Mémoire pleine</string>
+    <string name="ml_c_env">Env manquante</string>
+    <string name="ml_c_port">Port pris</string>
+    <string name="ml_c_deps">Install. échouée</string>
+    <string name="ml_c_build">Erreur build</string>
+    <string name="ml_c_disk">Disque plein</string>
+    <string name="ml_c_registry">Accès registre</string>
+    <string name="ml_c_health">Santé expirée</string>
+    <string name="ml_fix_redeploy">Redéployer</string>
+    <string name="ml_fix_env">Ouvrir env</string>
+    <string name="ml_fix_resources">Ressources</string>
+    <string name="ml_fix_server">Nettoyer</string>
+    <string name="ml_anom">%1$s %2$s× l’habituel</string>
+    <string name="ml_anom_at">Habituel %1$s · %2$s</string>
+    <string name="ml_anom_any">Habituel · %1$s</string>
+    <string name="ml_anom_chip">%1$s %2$s×</string>
+    <string name="ml_ping">Ping %1$s</string>
+    <string name="ml_grouped">Groupés</string>
+    <plurals name="ml_distinct">
+        <item quantity="one">%1$d message</item>
+        <item quantity="many">%1$d messages</item>
+        <item quantity="other">%1$d messages</item>
+    </plurals>
+    <plurals name="ml_quiet">
+        <item quantity="one">%1$d discrète</item>
+        <item quantity="many">%1$d discrètes</item>
+        <item quantity="other">%1$d discrètes</item>
+    </plurals>
+    <string name="ml_ai">IA locale</string>
+    <string name="ml_ai_ready">Prête</string>
+    <string name="ml_ai_download">Télécharger</string>
+    <string name="ml_ai_downloading">En cours</string>
+    <string name="ml_ai_unavailable">Indisponible</string>
+    <string name="ml_explain">Expliquer</string>
+    <string name="ml_ai_busy">Plus tard</string>
+    <string name="ml_ai_failed">Pas de réponse</string>
+</resources>

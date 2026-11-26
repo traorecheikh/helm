@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_ok">Tout va bien</string>
+    <string name="home_down">Ne répond pas</string>
+    <string name="home_offline">Hors ligne · %1$s</string>
+    <string name="home_building">Build : %1$s</string>
+    <string name="home_quiet">Calme jusqu\'à %1$s</string>
+    <string name="home_up">60 j · %1$s%%</string>
+    <string name="home_up_down">%1$d en panne · %2$s%%</string>
+    <string name="home_ram">RAM</string>
+    <string name="home_empty">Rien pour l\'instant</string>
+    <plurals name="home_phones">
+        <item quantity="one">%1$d téléphone</item>
+        <item quantity="other">%1$d téléphones</item>
+    </plurals>
+    <string name="home_watch">À surveiller</string>
+</resources>

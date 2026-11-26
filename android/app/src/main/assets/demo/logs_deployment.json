@@ -1,0 +1,12 @@
+[
+{"line":"Initializing deployment"},
+{"line":"Cloning repository example/app (branch main)"},
+{"line":"Step 1/9 : FROM node:22-alpine"},
+{"line":"Step 2/9 : WORKDIR /app"},
+{"line":"Step 4/9 : RUN npm ci --omit=dev"},
+{"line":"warn deprecated inflight@1.0.6: this module is not supported"},
+{"line":"Step 8/9 : RUN npm run build"},
+{"line":"Successfully built 4be1f9c20a7d"},
+{"line":"Deploying service app"},
+{"line":"Container started, health check passed: deployed"}
+]

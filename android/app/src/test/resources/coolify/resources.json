@@ -1,0 +1,8 @@
+[
+  {"id": 101, "uuid": "app1", "name": "storefront", "type": "application", "status": "running:healthy", "environment_id": 11, "fqdn": "https://shop.example.com", "git_branch": "main"},
+  {"id": 102, "uuid": "app2", "name": "worker", "type": "application", "status": "exited:unhealthy", "environment_id": 12},
+  {"id": 103, "uuid": "svc1", "name": "plausible", "type": "service", "status": "restarting", "environment_id": 11},
+  {"id": 104, "uuid": "db1", "name": "shop-db", "type": "standalone-postgresql", "status": "running:healthy", "environment_id": 11},
+  {"id": 105, "uuid": "db2", "name": "cache", "type": "standalone-redis", "status": null, "environment_id": "11"},
+  {"id": 106, "uuid": "orphan", "name": "lost", "type": "application", "status": "running:healthy", "environment_id": 999}
+]

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="srv_updates">Updates</string>
+    <string name="srv_certs">Certs</string>
+    <string name="srv_web">Web</string>
+    <string name="srv_secrets">Secrets</string>
+    <string name="srv_logs">Logs</string>
+    <string name="srv_jobs">Jobs</string>
+    <string name="srv_files">Files</string>
+    <string name="srv_docker">Docker</string>
+    <string name="srv_off">Off</string>
+    <string name="srv_up">Up %1$s d</string>
+    <string name="srv_full">Full in %1$s d</string>
+    <string name="srv_all">All %1$d</string>
+</resources>

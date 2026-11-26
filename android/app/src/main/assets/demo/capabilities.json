@@ -1,0 +1,6 @@
+{
+"platform":"dokploy",
+"dokploy":true,
+"coolify":false,
+"docker":true
+}

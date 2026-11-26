@@ -1,0 +1,11 @@
+{
+"load":[1.42,1.18,0.97],
+"netRxBytesPerSec":182000.0,
+"netTxBytesPerSec":96000.0,
+"topProcesses":[{"name":"node","cpuPercent":14.2,"memBytes":641728512},{"name":"postgres","cpuPercent":6.8,"memBytes":880803840},{"name":"dockerd","cpuPercent":3.1,"memBytes":220200960},{"name":"traefik","cpuPercent":1.9,"memBytes":73400320}],
+"pendingUpdates":14,
+"securityUpdates":3,
+"rebootRequired":false,
+"failedSshLogins24h":37,
+"dockerDisk":{"imagesBytes":9771050598,"containersBytes":429496729,"volumesBytes":12884901888,"buildCacheBytes":3435973836}
+}

@@ -1,0 +1,6 @@
+{
+"checkedAt":"{{iso-5s}}",
+"containers":{"containerCount":25,"serviceCount":22},
+"resources":{"memTotalBytes":8589934592,"memUsedBytes":4467814563,"cpuCount":4},
+"disk":{"totalBytes":171798691840,"usedBytes":104798250598}
+}

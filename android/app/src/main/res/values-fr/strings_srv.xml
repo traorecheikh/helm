@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="srv_updates">MAJ</string>
+    <string name="srv_certs">Certifs</string>
+    <string name="srv_web">Web</string>
+    <string name="srv_secrets">Secrets</string>
+    <string name="srv_logs">Logs</string>
+    <string name="srv_jobs">Tâches</string>
+    <string name="srv_files">Fichiers</string>
+    <string name="srv_docker">Docker</string>
+    <string name="srv_off">Off</string>
+    <string name="srv_up">Actif %1$s\u00A0j</string>
+    <string name="srv_full">Plein dans %1$s\u00A0j</string>
+    <string name="srv_all">Tout (%1$d)</string>
+</resources>

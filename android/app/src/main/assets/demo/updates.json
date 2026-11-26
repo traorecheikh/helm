@@ -1,0 +1,8 @@
+{
+"pending":[{"name":"openssl","from":"3.0.5-1","to":"3.0.12-1","group":"security"},{"name":"libssl3","from":"3.0.8-1","to":"3.0.13-1","group":"security"},{"name":"sudo","from":"3.0.2-1","to":"3.0.11-1","group":"security"},{"name":"curl","from":"2.31-1","to":"2.41-1","group":"system"},{"name":"libcurl4","from":"2.30-1","to":"2.40-1","group":"system"},{"name":"tzdata","from":"2.32-1","to":"2.42-1","group":"system"},{"name":"python3-minimal","from":"2.33-1","to":"2.43-1","group":"system"},{"name":"systemd","from":"2.38-1","to":"2.43-1","group":"system"},{"name":"systemd-sysv","from":"2.34-1","to":"2.44-1","group":"system"},{"name":"vim-tiny","from":"2.34-1","to":"2.44-1","group":"system"},{"name":"bash","from":"2.33-1","to":"2.43-1","group":"system"},{"name":"git","from":"2.38-1","to":"2.43-1","group":"system"},{"name":"ca-certificates","from":"2.34-1","to":"2.44-1","group":"system"},{"name":"libpam-modules","from":"2.36-1","to":"2.41-1","group":"system"}],
+"held":[],
+"rebootRequired":false,
+"runningKernel":"6.8.0-48-generic",
+"autoReboot":true,
+"unattended":{"installed":true,"enabled":true,"lastRun":"{{ts-20h}}","upgraded":["tzdata","git"],"keptBack":[],"ok":true}
+}

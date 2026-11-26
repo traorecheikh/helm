@@ -1,0 +1,4 @@
+{
+"totalBytes":5798205849,
+"items":[{"id":"build_cache","count":38,"bytes":3435973836},{"id":"dangling_images","count":7,"bytes":1503238553},{"id":"unused_images","count":3,"bytes":751619276},{"id":"stopped_containers","count":1,"bytes":94371840}]
+}

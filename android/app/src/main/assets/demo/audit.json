@@ -1,0 +1,7 @@
+[
+{"at":"{{ts-2h}}","deviceName":"Pixel 9","action":"unban_ip","detail":"192.0.2.42","ip":"192.0.2.10"},
+{"at":"{{ts-200m}}","deviceName":"Pixel 9","action":"redeploy","detail":"Atlas Web","ip":"192.0.2.10"},
+{"at":"{{ts-25h}}","deviceName":"Pixel 9","action":"ban_ip","detail":"192.0.2.75","ip":"192.0.2.10"},
+{"at":"{{ts-2d}}","deviceName":"Studio tablet","action":"restart_container","detail":"Webmail","ip":"198.51.100.200"},
+{"at":"{{ts-12d}}","deviceName":"Pixel 9","action":"approve_device","detail":"Studio tablet","ip":"192.0.2.10"}
+]

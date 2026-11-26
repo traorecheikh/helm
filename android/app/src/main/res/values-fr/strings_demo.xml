@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="demo_try">Essayer la démo</string>
+    <string name="demo_exit">Quitter la démo</string>
+    <string name="demo_server">Serveur de démo</string>
+</resources>

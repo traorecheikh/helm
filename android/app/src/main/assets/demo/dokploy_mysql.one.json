@@ -1,0 +1,9 @@
+{
+"name":"{{name}}",
+"appName":"{{appName}}",
+"applicationStatus":"{{status}}",
+"dockerImage":"mysql:8.4",
+"databaseName":"reports",
+"databaseUser":"reports",
+"replicas":1
+}

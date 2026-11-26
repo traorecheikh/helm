@@ -1,0 +1,84 @@
+[
+ {
+  "deploymentId": "x",
+  "title": "x",
+  "description": "x",
+  "status": "done",
+  "logPath": "x",
+  "pid": null,
+  "applicationId": "x",
+  "composeId": null,
+  "serverId": null,
+  "isPreviewDeployment": false,
+  "previewDeploymentId": null,
+  "createdAt": "x",
+  "startedAt": "x",
+  "finishedAt": "x",
+  "errorMessage": null,
+  "scheduleId": null,
+  "backupId": null,
+  "rollbackId": null,
+  "volumeBackupId": null,
+  "buildServerId": null,
+  "application": {
+   "applicationId": "x",
+   "name": "x",
+   "appName": "x",
+   "icon": null,
+   "environment": {
+    "environmentId": "x",
+    "name": "x",
+    "project": {
+     "projectId": "x",
+     "name": "x"
+    }
+   },
+   "server": null,
+   "buildServer": null
+  },
+  "compose": null,
+  "server": null,
+  "buildServer": null
+ },
+ {
+  "deploymentId": "x",
+  "title": "x",
+  "description": "x",
+  "status": "done",
+  "logPath": "x",
+  "pid": null,
+  "applicationId": "x",
+  "composeId": null,
+  "serverId": null,
+  "isPreviewDeployment": false,
+  "previewDeploymentId": null,
+  "createdAt": "x",
+  "startedAt": "x",
+  "finishedAt": "x",
+  "errorMessage": null,
+  "scheduleId": null,
+  "backupId": null,
+  "rollbackId": null,
+  "volumeBackupId": null,
+  "buildServerId": null,
+  "application": {
+   "applicationId": "x",
+   "name": "x",
+   "appName": "x",
+   "icon": null,
+   "environment": {
+    "environmentId": "x",
+    "name": "x",
+    "project": {
+     "projectId": "x",
+     "name": "x"
+    }
+   },
+   "server": null,
+   "buildServer": null
+  },
+  "compose": null,
+  "server": null,
+  "buildServer": null
+ }
+]

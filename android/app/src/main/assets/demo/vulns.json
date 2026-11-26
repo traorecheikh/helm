@@ -1,0 +1,11 @@
+{
+"installed":true,
+"running":false,
+"autofixOff":false,
+"at":"{{ts-3h}}",
+"counts":{"critical":2,"high":4},
+"fixable":{"critical":2,"high":3},
+"targets":[{"kind":"host","target":"host","counts":{"critical":0,"high":1},"fixable":{"critical":0,"high":1},"findings":[{"id":"CVE-2026-90412","package":"openssl","installed":"3.0.13-1","fixed":"3.0.14-1","severity":"high","fixable":true}]},{"kind":"image","target":"registry.example.com/atlas/web:2.14.1","containers":["atlas-web-45adc3.1.45adc3a75bb8086b830bf48de"],"service":{"platform":"dokploy","kind":"application","id":"demo-app-atlas-web","name":"Atlas Web"},"database":false,"stateful":false,"counts":{"critical":2,"high":3},"fixable":{"critical":2,"high":2},"findings":[{"id":"CVE-2026-90077","package":"libexpat1","installed":"2.6.2-r0","fixed":"2.6.4-r0","severity":"critical","fixable":true},{"id":"CVE-2026-90133","package":"zlib","installed":"1.3.1-r0","fixed":"1.3.1-r2","severity":"critical","fixable":true},{"id":"CVE-2026-90250","package":"busybox","installed":"1.36.1-r5","fixed":"1.36.1-r9","severity":"high","fixable":true},{"id":"CVE-2026-90311","package":"musl","installed":"1.2.5-r0","fixed":"1.2.5-r2","severity":"high","fixable":true},{"id":"CVE-2026-90388","package":"npm:tar","installed":"6.2.0","fixed":null,"severity":"high","fixable":false}]},{"kind":"image","target":"postgres:16-alpine","containers":["atlas-db-eb1e2a.1.eb1e2a9d8c032ad7875682b85"],"service":null,"database":true,"stateful":true,"counts":{"critical":0,"high":0},"fixable":{"critical":0,"high":0},"findings":[]}],
+"history":[{"day":"{{day-13d}}","critical":3,"high":5},{"day":"{{day-12d}}","critical":3,"high":4},{"day":"{{day-11d}}","critical":3,"high":6},{"day":"{{day-10d}}","critical":3,"high":5},{"day":"{{day-9d}}","critical":3,"high":4},{"day":"{{day-8d}}","critical":3,"high":6},{"day":"{{day-7d}}","critical":3,"high":5},{"day":"{{day-6d}}","critical":3,"high":4},{"day":"{{day-5d}}","critical":3,"high":6},{"day":"{{day-4d}}","critical":3,"high":5},{"day":"{{day-3d}}","critical":2,"high":4},{"day":"{{day-2d}}","critical":2,"high":6},{"day":"{{day-1d}}","critical":2,"high":5},{"day":"{{day-0d}}","critical":2,"high":4}],
+"autofix":[{"key":"dokploy:application:demo-app-orbit-gateway","enabled":true,"allowStateful":false,"last":{"at":"{{ts-2d}}","result":"done"}}]
+}

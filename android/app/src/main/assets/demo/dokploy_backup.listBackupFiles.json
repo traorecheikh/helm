@@ -1,0 +1,8 @@
+[
+{"Name":"atlas-db-daily-0.sql.gz","Path":"atlas-db/atlas-db-daily-0.sql.gz","Size":16777216,"ModTime":"{{iso-3h}}","IsDir":false},
+{"Name":"atlas-db-daily-1.sql.gz","Path":"atlas-db/atlas-db-daily-1.sql.gz","Size":63963136,"ModTime":"{{iso-27h}}","IsDir":false},
+{"Name":"atlas-db-daily-2.sql.gz","Path":"atlas-db/atlas-db-daily-2.sql.gz","Size":60817408,"ModTime":"{{iso-51h}}","IsDir":false},
+{"Name":"orbit-db-daily-0.sql.gz","Path":"orbit-db/orbit-db-daily-0.sql.gz","Size":46137344,"ModTime":"{{iso-3h}}","IsDir":false},
+{"Name":"orbit-db-daily-1.sql.gz","Path":"orbit-db/orbit-db-daily-1.sql.gz","Size":78643200,"ModTime":"{{iso-27h}}","IsDir":false},
+{"Name":"orbit-db-daily-2.sql.gz","Path":"orbit-db/orbit-db-daily-2.sql.gz","Size":32505856,"ModTime":"{{iso-51h}}","IsDir":false}
+]

@@ -1,0 +1,9 @@
+# Owner server only. Add these lines to /etc/helm-agent/env (mode 0600) with the
+# real values BEFORE installing the new agent, then: systemctl restart helm-agent
+# Existing HELM_HOOK_SECRET and HELM_DOKPLOY_KEY lines stay as they are.
+HELM_BIND=0.0.0.0
+HELM_SSH_ALLOW_COUNTRIES=SN
+HELM_STALWART_ENV=/etc/dokploy/compose/<stalwart-compose-id>/code/.env
+HELM_PUBLIC_IP=<server-ipv4>
+HELM_SERVER_IPS=<server-ipv4>,<server-ipv6>
+HELM_OWN_HOSTS=<inbox-host>,<mx-host>,<infra-host>

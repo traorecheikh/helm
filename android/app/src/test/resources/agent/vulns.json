@@ -1,0 +1,16 @@
+{"at": 1795669800, "trigger": "daily", "trivy": "0.0.0-test", "dbError": null, "interrupted": null,
+ "targets": [
+  {"kind": "host", "target": "host", "counts": {"critical": 0, "high": 1}, "fixable": {"critical": 0, "high": 1}, "error": null,
+   "findings": [{"id": "CVE-H", "package": "openssl", "installed": "1.0", "fixed": "2.0", "severity": "high", "fixable": true}]},
+  {"kind": "image", "target": "web:1", "imageId": "sha256:aaa", "containers": ["web-app.1.x"],
+   "service": {"platform": "dokploy", "kind": "application", "id": "app1", "name": "web"}, "database": false, "stateful": false,
+   "counts": {"critical": 1, "high": 1}, "fixable": {"critical": 1, "high": 0}, "error": null,
+   "findings": [{"id": "CVE-W", "package": "libfoo", "installed": "1.0", "fixed": "2.0", "severity": "critical", "fixable": true},
+                {"id": "CVE-X", "package": "libbar", "installed": "1.0", "fixed": null, "severity": "high", "fixable": false}]},
+  {"kind": "image", "target": "postgres:16", "imageId": "sha256:bbb", "containers": ["db-stack-postgres-1"], "service": null, "database": true, "stateful": true,
+   "counts": {"critical": 0, "high": 0}, "fixable": {"critical": 0, "high": 0}, "findings": [], "error": "unknown image"}],
+ "counts": {"critical": 1, "high": 2}, "fixable": {"critical": 1, "high": 1},
+ "history": [{"day": "2026-11-25", "critical": 2, "high": 2}, {"day": "2026-11-26", "critical": 1, "high": 2}],
+ "installed": true, "running": false, "autofixOff": false,
+ "autofix": [{"key": "dokploy:application:app1", "platform": "dokploy", "kind": "application", "id": "app1", "name": "web", "enabled": true,
+              "allowStateful": false, "lastAttempt": 1795669800, "last": {"at": 1795669900, "result": "failed:unhealthy:rolled_back"}}]}

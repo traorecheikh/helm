@@ -1,0 +1,13 @@
+{
+"ip":"",
+"source":"web",
+"country":null,
+"banned":false,
+"onBlocklist":false,
+"allowed":false,
+"reason":null,
+"evidence":["Repeated 404 on sensitive paths"],
+"webRequests":["\"GET /.env HTTP/1.1\" 404 153","\"GET /wp-login.php HTTP/1.1\" 404 153","\"GET /.git/config HTTP/1.1\" 404 153","\"GET /phpmyadmin/ HTTP/1.1\" 404 153"],
+"webRequestCount":14,
+"sshLines":[]
+}

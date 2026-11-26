@@ -1,0 +1,4 @@
+{
+"devices":[{"deviceId":"demo-dev-1","name":"Pixel 9","role":"owner","addedAt":"{{ts-40d}}","lastSeenAt":"{{ts-30s}}","lastIp":"192.0.2.10"},{"deviceId":"demo-dev-2","name":"Studio tablet","role":"member","addedAt":"{{ts-12d}}","lastSeenAt":"{{ts-2d}}","lastIp":"198.51.100.200"}],
+"pending":[]
+}

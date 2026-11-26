@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aud_short">Audit</string>
+    <string name="aud_title">Vulnérabilités</string>
+    <plurals name="aud_critical">
+        <item quantity="one">%d critique</item>
+        <item quantity="many">%d critiques</item>
+        <item quantity="other">%d critiques</item>
+    </plurals>
+    <plurals name="aud_high">
+        <item quantity="one">%d élevée</item>
+        <item quantity="many">%d élevées</item>
+        <item quantity="other">%d élevées</item>
+    </plurals>
+    <string name="aud_scan">Analyser</string>
+    <string name="aud_scanning">Analyse</string>
+    <string name="aud_scan_started">Analyse lancée</string>
+    <string name="aud_missing">Trivy absent</string>
+    <string name="aud_none">Aucune faille</string>
+    <string name="aud_host">Serveur</string>
+    <string name="aud_patch">Corriger le serveur</string>
+    <string name="aud_patch_hold">Maintenir pour corriger</string>
+    <string name="aud_redeploy_hold">Maintenir pour redéployer</string>
+    <string name="aud_auto">Correction auto</string>
+    <string name="aud_auto_hold">Maintenir pour activer</string>
+    <string name="aud_auto_hold_data">Maintenir : garde des données</string>
+    <string name="aud_db">Base de données</string>
+    <string name="aud_fix">Correctif</string>
+    <string name="aud_auto_off">Correction auto coupée</string>
+    <string name="aud_last">Dernière correction</string>
+    <string name="aud_trend">30 jours</string>
+    <string name="aud_db_error">Base Trivy non mise à jour</string>
+    <string name="aud_kernel">Nouveau noyau</string>
+    <string name="aud_patching">Correctifs auto</string>
+    <string name="aud_on">Activés</string>
+    <string name="aud_off">Désactivés</string>
+    <string name="aud_last_run">Dernier passage</string>
+    <string name="aud_kept">Retenus</string>
+    <string name="aud_failed">Échec</string>
+    <string name="aud_skipped">Ignorée</string>
+    <string name="aud_done">Fait</string>
+</resources>

@@ -1,0 +1,7 @@
+[
+{"type":"dokploy","kind":"deploy","title":"Orbit Core deployed","titleFr":"Orbit Core déployé","message":"Cache rate-limit lookups","messageFr":"Cache rate-limit lookups"},
+{"type":"ban","ip":"198.51.100.231","reason":"Probing for exposed files · /.env","reasonFr":"Recherche de fichiers exposés · /.env","source":"web"},
+{"type":"dokploy","kind":"deploy","title":"Atlas Web deployed","titleFr":"Atlas Web déployé","message":"Fix checkout total rounding","messageFr":"Fix checkout total rounding"},
+{"type":"ban","ip":"203.0.113.188","reason":"WordPress login probing · /wp-login.php","reasonFr":"Sondage de connexion WordPress · /wp-login.php","source":"web"},
+{"type":"ban","ip":"192.0.2.144","reason":"SSH brute force · 31×","reasonFr":"Tentatives SSH répétées · 31×","source":"ssh"}
+]

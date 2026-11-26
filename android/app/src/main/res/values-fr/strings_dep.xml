@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dep_stop">Arrêter</string>
+    <string name="dep_stop_title">Arrêter ce déploiement ?</string>
+    <string name="dep_stop_body">Build annulé</string>
+    <string name="dep_stop_hold">Maintenir pour arrêter</string>
+    <string name="dep_rollback_off">Sans retour arrière</string>
+    <string name="dep_compare">Comparer</string>
+    <string name="dep_same">Même commit</string>
+    <string name="dep_branch_note">Le service change de branche</string>
+    <string name="dep_live_hash">En ligne · %1$s</string>
+    <string name="dep_checking">Vérification…</string>
+    <string name="dep_message">Message</string>
+</resources>

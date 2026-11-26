@@ -1,0 +1,1 @@
+{"platform": "coolify", "dokploy": false, "coolify": true, "docker": true, "fail2ban": true, "crowdsec": false, "traefik": true, "stalwart": false, "ssh": true, "version": "3"}

@@ -1,0 +1,1 @@
+{"id": 101, "uuid": "app1", "name": "storefront", "description": null, "status": "running:healthy", "git_repository": "acme/storefront", "git_branch": "main", "build_pack": "nixpacks", "fqdn": "https://shop.example.com", "docker_registry_image_name": null, "destination": {"id": 1}, "environment_id": 11}

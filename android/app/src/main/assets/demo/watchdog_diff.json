@@ -1,0 +1,8 @@
+[
+{"type":"hunk","text":"@@ -12,7 +12,8 @@"},
+{"type":"ctx","text":"Port 22","oldLine":12,"newLine":12},
+{"type":"del","text":"PasswordAuthentication yes","oldLine":13},
+{"type":"add","text":"PasswordAuthentication no","newLine":13},
+{"type":"add","text":"MaxAuthTries 3","newLine":14},
+{"type":"ctx","text":"PermitRootLogin no","oldLine":14,"newLine":15}
+]

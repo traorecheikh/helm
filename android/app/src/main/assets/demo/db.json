@@ -1,0 +1,10 @@
+{
+"container":"{{container}}",
+"database":"app",
+"databases":[{"name":"app","sizeBytes":1929379840},{"name":"postgres","sizeBytes":8388608}],
+"sizeBytes":1937768448,
+"activeConnections":7,
+"maxConnections":100,
+"version":"PostgreSQL 16.4",
+"largestTables":[{"name":"orders","bytes":641728512,"rows":1840211},{"name":"events","bytes":503316480,"rows":5120934},{"name":"sessions","bytes":100663296,"rows":212044}]
+}

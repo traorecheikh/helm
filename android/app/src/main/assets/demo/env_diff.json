@@ -1,0 +1,5 @@
+[
+{"key":"LOG_LEVEL","type":"changed","old":"debug","new":"info"},
+{"key":"PUBLIC_URL","type":"same","old":"https://atlas.example.com","new":"https://atlas.example.com"},
+{"key":"FEATURE_PRICING_FAQ","type":"added","new":"true"}
+]

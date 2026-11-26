@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="plat_title">Platform</string>
+    <string name="plat_none">Server only</string>
+    <string name="plat_detected">Detected</string>
+    <string name="plat_off">Not connected</string>
+    <string name="plat_how">How</string>
+    <string name="plat_next">Continue</string>
+</resources>

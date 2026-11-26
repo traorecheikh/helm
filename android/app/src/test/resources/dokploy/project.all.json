@@ -1,0 +1,67 @@
+[
+ {
+  "projectId": "x",
+  "name": "x",
+  "description": "x",
+  "createdAt": "x",
+  "organizationId": "x",
+  "env": "x",
+  "environments": [
+   {
+    "name": "x",
+    "environmentId": "x",
+    "isDefault": true,
+    "applications": [],
+    "mariadb": [],
+    "mongo": [],
+    "mysql": [],
+    "postgres": [],
+    "redis": [],
+    "compose": [
+     {
+      "composeId": "x",
+      "name": "x",
+      "composeStatus": "done"
+     }
+    ],
+    "libsql": []
+   }
+  ],
+  "projectTags": []
+ },
+ {
+  "projectId": "x",
+  "name": "x",
+  "description": "x",
+  "createdAt": "x",
+  "organizationId": "x",
+  "env": "x",
+  "environments": [
+   {
+    "name": "x",
+    "environmentId": "x",
+    "isDefault": true,
+    "applications": [],
+    "mariadb": [],
+    "mongo": [],
+    "mysql": [],
+    "postgres": [],
+    "redis": [],
+    "compose": [
+     {
+      "composeId": "x",
+      "name": "x",
+      "composeStatus": "done"
+     },
+     {
+      "composeId": "x",
+      "name": "x",
+      "composeStatus": "done"
+     }
+    ],
+    "libsql": []
+   }
+  ],
+  "projectTags": []
+ }
+]

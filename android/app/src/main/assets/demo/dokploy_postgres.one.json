@@ -1,0 +1,12 @@
+{
+"name":"{{name}}",
+"appName":"{{appName}}",
+"applicationStatus":"{{status}}",
+"dockerImage":"postgres:16-alpine",
+"databaseName":"app",
+"databaseUser":"app",
+"externalPort":null,
+"replicas":1,
+"env":null,
+"backups":[{"backupId":"demo-bk-{{id}}","schedule":"0 3 * * *","database":"app","prefix":"{{appName}}","destinationId":"demo-dest-s3"}]
+}

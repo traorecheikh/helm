@@ -1,0 +1,3 @@
+[
+{"id":"demo-inc-1","start":"{{ts-230h}}","end":"{{ts-13788m}}","durationSec":720,"services":["orbit-core","api.example.net"],"cause":"Orbit Core ran out of memory and restarted","timeline":[{"at":"{{ts-230h}}","kind":"down","title":"api.example.net stopped answering"},{"at":"{{ts-13798m}}","kind":"restart","title":"Container orbit-core restarted"},{"at":"{{ts-13788m}}","kind":"up","title":"api.example.net answering again"}]}
+]

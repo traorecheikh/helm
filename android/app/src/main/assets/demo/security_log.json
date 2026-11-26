@@ -1,0 +1,13 @@
+[
+{"at":"{{ts-5m}}","source":"fail2ban","ip":"203.0.113.20","country":"NL","what":"SSH brute force","count":16,"count429":0},
+{"at":"{{ts-52m}}","source":"web","ip":"198.51.100.31","country":"US","what":"Probing for exposed files","count":30,"count429":3},
+{"at":"{{ts-99m}}","source":"web","ip":"192.0.2.42","country":"RU","what":"WordPress login probing","count":36,"count429":4},
+{"at":"{{ts-146m}}","source":"fail2ban","ip":"203.0.113.53","country":"DE","what":"Mail login guessing","count":8,"count429":0},
+{"at":"{{ts-193m}}","source":"fail2ban","ip":"198.51.100.64","country":"CN","what":"SSH brute force","count":23,"count429":0},
+{"at":"{{ts-4h}}","source":"web","ip":"192.0.2.75","country":"IN","what":"Probing for exposed files","count":29,"count429":4},
+{"at":"{{ts-287m}}","source":"web","ip":"203.0.113.86","country":"BR","what":"WordPress login probing","count":29,"count429":3},
+{"at":"{{ts-334m}}","source":"fail2ban","ip":"198.51.100.97","country":"NL","what":"Mail login guessing","count":24,"count429":0},
+{"at":"{{ts-381m}}","source":"fail2ban","ip":"192.0.2.108","country":"US","what":"SSH brute force","count":21,"count429":0},
+{"at":"{{ts-428m}}","source":"web","ip":"203.0.113.119","country":"RU","what":"Probing for exposed files","count":10,"count429":0},
+{"at":"{{ts-2h}}","source":"helm","ip":"192.0.2.10","country":"FR","what":"Ban removed","count":1,"by":"Pixel 9"}
+]

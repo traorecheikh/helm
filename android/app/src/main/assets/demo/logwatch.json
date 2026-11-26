@@ -1,0 +1,4 @@
+{
+"settings":{"burst":20,"enabled":true},
+"detections":[{"id":"demo-lw-1","type":"system","kind":"log_error_burst","title":"Error burst in Orbit Core","titleFr":"Rafale d'erreurs dans Orbit Core","message":"23 errors in one minute","messageFr":"23 erreurs en une minute","container":"orbit-core-3fb541","at":"{{ts-3d}}"}]
+}

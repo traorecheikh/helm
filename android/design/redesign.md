@@ -6,7 +6,7 @@ Source of truth for every agent working on the redesign. The old UI is in `git s
 Helm = pocket cockpit for a self-hosted Dokploy server: is it fine, what needs me, fix it in two taps.
 
 ## World (from Iris DESIGN.md, light first)
-Paper (violet-tinted) ground, white rounded cards, violet = the one action colour, green/orange/red = state only, yellow accent for one highlight at most. Font Schibsted Grotesk (via `Txt`/`H1`/`H2`, numbers via `DotNum`). Phosphor icons only. Light AND dark by tokens (`H.c.*`), never raw hex in screens.
+Paper (magenta-tinted) ground, white rounded cards, magenta = the one action colour, green/orange/red = state only, yellow accent for one highlight at most. Font Schibsted Grotesk (via `Txt`/`H1`/`H2`, numbers via `DotNum`). Phosphor icons only. Light AND dark by tokens (`H.c.*`), never raw hex in screens.
 
 ## Screens (9 max, nothing else gets a route)
 HomeR · AppsR · ShieldR(ip) · ServerR · SettingsR · SearchR · ServiceR(kind,id) · DeployR · SetupFlow.
@@ -16,7 +16,7 @@ Detail = bottom sheet (`SheetFrame`/`ConfirmSheet`) or inline expansion, never a
 1. One hero per screen (one big status/number/card). Everything else is quiet, grouped in `Card`s with 12–16dp gaps, 20dp side padding (Screen does it).
 2. Visual first: state = colour + `Mk`/`Pill`/`Seg`/`Meter`/`DotNum`/icons. If it needs a sentence to be understood, fix the UI.
 3. Text −70%: titles 1–2 words, NO subtitle under titles, NO explanatory paragraphs, labels ≤2 words, empty state = icon + ≤3 words, errors = one short line. Confirm sheets: title + one short line.
-4. `H.c.signal` (violet) = actions/selection only. Failures/danger = `H.c.bad` / `Tone.Signal` (renders red). Warn orange, ok green. Never use `signal` for an error.
+4. `H.c.signal` (magenta) = actions/selection only. Failures/danger = `H.c.bad` / `Tone.Signal` (renders red). Warn orange, ok green. Never use `signal` for an error.
 5. Every existing capability stays reachable (tab, sheet, row action, long-press menu). Nothing dropped silently; if a feature truly cannot fit, list it in your report.
 6. Touch targets ≥48dp, content descriptions on icon-only controls, `Haptics` as before, reduce-motion respected (`LocalReduceMotion`).
 7. Strings: `tr(R.string.x)`, add to BOTH `res/values/strings.xml` (EN) and `res/values-fr/strings.xml` (FR). Short. Reuse existing strings when they fit. Do not delete strings other files may use (cleanup is done at the end by the lead). Route/param/identifier names stay English.

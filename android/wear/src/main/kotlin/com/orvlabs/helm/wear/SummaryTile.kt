@@ -64,6 +64,6 @@ class SummaryTile : TileService() {
         const val OK_SOFT = 0xFF0B2E1E.toInt()
         const val BAD = 0xFFF97770.toInt()
         const val BAD_SOFT = 0xFF3F191A.toInt()
-        const val MUTED = 0xFFB5B2C0.toInt()
+        const val MUTED = 0xFFBEAFB8.toInt()
     }
 }

@@ -2,9 +2,9 @@
 # Helm agent installer for Debian and Ubuntu. See install/README.md.
 set -eu
 
-: "${HELM_VERSION:=2.0}"
+: "${HELM_VERSION:=2.1}"
 : "${HELM_URL:=https://github.com/traorecheikh/helm/releases/download/v$HELM_VERSION/helm-agent-$HELM_VERSION.tar.gz}"
-: "${HELM_SHA256:=805be673a8286f542b7285ea8557ab3db6573a32c9273a69e24f870037fedf2c}"
+: "${HELM_SHA256:=89dea20e7f411297d43d1c2f35fc64bbf58c3c068386c492747416e7b8bd4ebd}"
 : "${APK_URL:=https://github.com/traorecheikh/helm/releases/latest/download/helm.apk}"
 : "${TRIVY_VERSION:=}"
 # Trivy repo key rotated after the March 2026 incident, see github.com/aquasecurity/trivy/discussions/10549.

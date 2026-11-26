@@ -173,7 +173,7 @@ private fun ShieldMap(world: World, geo: Geo?, home: String, locked: Boolean, ri
     }
 }
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun ShieldPreview() = CoverPreview {
     val world = World.load(LocalContext.current)

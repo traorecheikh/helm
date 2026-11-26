@@ -43,7 +43,7 @@ object IncidentCard {
         c.drawColor(Art.PAPER)
         val card = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Art.CARD }
         c.drawRoundRect(40f, 40f, W - 40f, H - 40f, 56f, 56f, card)
-        val mark = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Art.VIOLET }
+        val mark = Paint(Paint.ANTI_ALIAS_FLAG).apply { color = Art.MAGENTA }
         c.drawRoundRect(90f, 90f, 170f, 170f, 24f, 24f, mark)
         c.drawText(tr(R.string.helm), 200f, 148f, text(ctx, 34f, Art.MUTED, 700).apply { letterSpacing = 0.12f })
         var y = c.paragraph(headline, text(ctx, 104f, Art.BAD, 800), 90f, 230f, W - 180, 3) + 50f

@@ -37,7 +37,7 @@ object LiveNotifier {
     }
 
     private fun ink(ctx: Context): Int =
-        if (ctx.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES) 0xFFB69FFE.toInt() else 0xFF5B32E6.toInt()
+        if (ctx.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES) 0xFFF278B9.toInt() else 0xFFD11D90.toInt()
 
     private fun stepText(step: Int) = tr(listOf(R.string.deploy_step_pull, R.string.deploy_step_build, R.string.deploy_step_start, R.string.deploy_step_check)[step.coerceIn(0, 3)])
 

@@ -13,7 +13,7 @@ export function DokployLogo({ className }: Props) {
 export function CoolifyLogo({ className }: Props) {
   return (
     <svg viewBox="0 0 352 352" aria-hidden="true" className={className}>
-      <path className="fill-[#452E72] dark:fill-[#864FFC]/60" d="M64 256v32H32v-32zm0 0V96h32v160ZM96 96V64h224V32h32v64Zm224 192h32v64H96v-32h224z" />
+      <path fill="#452E72" d="M64 256v32H32v-32zm0 0V96h32v160ZM96 96V64h224V32h32v64Zm224 192h32v64H96v-32h224z" />
       <path fill="#864FFC" d="M64 256H0V64h64Zm0-192V0h256v64Zm0 192h256v64H64Z" />
     </svg>
   )

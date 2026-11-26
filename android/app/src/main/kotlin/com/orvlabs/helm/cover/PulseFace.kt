@@ -126,19 +126,19 @@ private fun sample(states: List<String>) = Snapshot(
     containers = states.mapIndexed { i, st -> Container(containerId = "c$i", name = "app$i", state = st) },
 )
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun PulseCalmPreview() = CoverPreview {
     PulseFace(PulseState(snap = sample(List(35) { "running" }), loading = false))
 }
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun PulseDownPreview() = CoverPreview {
     PulseFace(PulseState(snap = sample(List(30) { "running" } + "dead" + "restarting"), loading = false))
 }
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun NightPreview() = CoverPreview {
     NightFace(0, 0, "07:00", NightSummary(deploys = 2, bans = 41), Updates(nextReboot = 1_763_600_000))

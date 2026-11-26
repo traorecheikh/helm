@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "cp ../install/install.sh public/install.sh && vite",
-    "build": "cp ../install/install.sh public/install.sh && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && bun scripts/prerender.ts",
+    "prep": "cp ../install/install.sh public/install.sh && rm -rf public/img && mkdir -p public/img && cp ../docs/img/*.png public/img/",
+    "dev": "bun run prep && vite",
+    "build": "bun run prep && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && bun scripts/prerender.ts",
     "preview": "vite preview",
     "lint": "oxlint"
   },

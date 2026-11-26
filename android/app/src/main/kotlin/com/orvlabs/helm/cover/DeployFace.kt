@@ -106,13 +106,13 @@ private fun Steps(step: Int, modifier: Modifier) {
     }
 }
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun DeployRunningPreview() = CoverPreview {
     DeployFace(Deployment(deploymentId = "d1", status = "running", applicationId = "a1"), "karma-renderer", 1) {}
 }
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun DeployFailedPreview() = CoverPreview {
     DeployFace(Deployment(deploymentId = "d1", status = "error", applicationId = "a1", errorMessage = "npm ERR! missing script: build"), "karma-renderer", 0) {}

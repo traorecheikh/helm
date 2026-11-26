@@ -27,8 +27,8 @@ function Header() {
     <header className="sticky top-0 z-20 border-b bg-background/85 backdrop-blur">
       <div className={`${wrap} flex h-14 items-center justify-between`}>
         <a href="#main" className="flex items-center gap-2.5 text-lg font-semibold tracking-tight">
-          <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width={28} height={28} className="size-7" />
-          Helm
+          <img src={`${import.meta.env.BASE_URL}helm-wordmark.svg`} alt="Helm" width={100} height={32} className="h-8 w-auto dark:hidden" />
+          <img src={`${import.meta.env.BASE_URL}helm-wordmark-dark.svg`} alt="Helm" width={100} height={32} className="hidden h-8 w-auto dark:block" />
         </a>
         <div className="flex items-center gap-1">
           <Button variant="ghost" size="lg" asChild className="font-semibold">
@@ -142,7 +142,7 @@ function WorksWith() {
         <ul className="mt-12 grid divide-y overflow-hidden rounded-2xl border bg-card md:grid-cols-3 md:divide-x md:divide-y-0">
           {t.works.map((w, i) => (
             <li key={w.name} className="flex flex-col gap-8 p-8 md:p-10">
-              <div className="flex h-14 items-end">{logos[i]}</div>
+              <div className="flex h-14 items-end text-primary">{logos[i]}</div>
               <div>
                 <p className="text-3xl font-semibold tracking-tight">{w.name}</p>
                 <p className="mt-2 text-muted-foreground">{w.line}</p>

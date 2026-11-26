@@ -60,16 +60,16 @@ private fun cp(l: Long, d: Long, theme: String): androidx.glance.unit.ColorProvi
 }
 
 class W(val ctx: Context, val s: Summary?, val theme: String, val size: DpSize, val cfg: com.orvlabs.helm.data.Config? = null) {
-    val bg = cp(0xFFFFFFFF, 0xFF15141B, theme)
-    val ink = cp(0xFF17141E, 0xFFF4F3F8, theme)
-    val muted = cp(0xFF5B5966, 0xFFB5B2C0, theme)
-    val faint = cp(0xFF726F7C, 0xFF908D9A, theme)
+    val bg = cp(0xFFFFFFFF, 0xFF1A1217, theme)
+    val ink = cp(0xFF1C1319, 0xFFF7F2F5, theme)
+    val muted = cp(0xFF64565F, 0xFFBEAFB8, theme)
+    val faint = cp(0xFF7A6D75, 0xFF988B93, theme)
     val warn = cp(0xFFA54C00, 0xFFF7AC4D, theme)
     val ok = cp(0xFF007D50, 0xFF56D298, theme)
     val bad = cp(0xFFBE2323, 0xFFF97770, theme)
-    val signalFill = cp(0xFF5B32E6, 0xFFB69FFE, theme)
-    val signalInk = cp(0xFFFFFFFF, 0xFF180E44, theme)
-    val off = cp(0xFFE2E0EA, 0xFF292732, theme)
+    val signalFill = cp(0xFFD11D90, 0xFFF278B9, theme)
+    val signalInk = cp(0xFFFFFFFF, 0xFF290520, theme)
+    val off = cp(0xFFE9E0E6, 0xFF30252C, theme)
     val narrow get() = size.width < 200.dp
     val oneRow get() = size.height < 100.dp
     val density = ctx.resources.displayMetrics.density

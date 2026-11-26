@@ -202,7 +202,7 @@ fun Card(
 ) {
     val c = H.c
     val shape = androidx.compose.foundation.shape.RoundedCornerShape(28.dp)
-    val tint = Color(0xFF2B1B6B)
+    val tint = Color(0xFF431532)
     val flat = c.dark || color != c.card
     Column(
         modifier.fillMaxWidth()

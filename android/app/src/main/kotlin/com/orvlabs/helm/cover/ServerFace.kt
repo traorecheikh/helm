@@ -96,7 +96,7 @@ private fun Bar(label: String, value: Float, active: Boolean, warnAt: Float = 85
     }
 }
 
-@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF0D0B12)
+@Preview(widthDp = 512, heightDp = 260, showBackground = true, backgroundColor = 0xFF100A0E)
 @Composable
 private fun ServerPreview() = CoverPreview {
     ServerFace(

@@ -30,7 +30,19 @@ import com.orvlabs.helm.data.alertKey
 import com.orvlabs.helm.ml.Triage
 import com.orvlabs.helm.ml.TriageStore
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runInterruptible
 import kotlinx.coroutines.withContext
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.net.toUri
+import com.orvlabs.helm.BuildConfig
+import com.orvlabs.helm.data.AppJson
+import com.orvlabs.helm.data.Net
+import java.io.IOException
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import okhttp3.Request
 import com.orvlabs.helm.data.Config
 import com.orvlabs.helm.data.Event
 import com.orvlabs.helm.data.Ops
@@ -176,6 +188,52 @@ private fun Incidents() {
             i.timeline.forEach { t -> Li(t.title, Modifier.padding(start = 16.dp), titleSize = 13, right = { RightText(clock(t.at * 1000)) }) }
         }
     }
+}
+
+private var releaseChecked = false
+private var newerTag: String? = null
+
+private fun isNewer(tag: String, current: String): Boolean {
+    val a = tag.removePrefix("v").split('.').map { it.toIntOrNull() ?: return false }
+    val b = current.split('.').map { it.toIntOrNull() ?: return false }
+    for (i in 0 until maxOf(a.size, b.size)) {
+        val d = a.getOrElse(i) { 0 } - b.getOrElse(i) { 0 }
+        if (d != 0) return d > 0
+    }
+    return false
+}
+
+private suspend fun newerRelease(): String? = try {
+    runInterruptible(Dispatchers.IO) {
+        val req = Request.Builder().url("https://api.github.com/repos/traorecheikh/helm/releases/latest").header("Accept", "application/vnd.github+json").build()
+        Net.client.newCall(req).execute().use { r ->
+            if (r.isSuccessful) AppJson.parseToJsonElement(r.body.string()).jsonObject["tag_name"]?.jsonPrimitive?.content else null
+        }
+    }?.takeIf { isNewer(it, BuildConfig.VERSION_NAME) }
+} catch (e: IOException) {
+    null
+} catch (e: IllegalArgumentException) {
+    null
+}
+
+@Composable
+internal fun HomeUpdate(modifier: Modifier) {
+    var tag by remember { mutableStateOf(newerTag) }
+    LaunchedEffect(Unit) {
+        if (releaseChecked) return@LaunchedEffect
+        releaseChecked = true
+        newerTag = newerRelease()
+        tag = newerTag
+    }
+    val t = tag ?: return
+    val ctx = LocalContext.current
+    val open: () -> Unit = {
+        try {
+            ctx.startActivity(Intent(Intent.ACTION_VIEW, "https://github.com/traorecheikh/helm/releases/latest/download/helm.apk".toUri()))
+        } catch (e: ActivityNotFoundException) {
+        }
+    }
+    Banner(tr(R.string.home_update, t.removePrefix("v")), Ph.Download, modifier.press(open))
 }
 
 @Composable

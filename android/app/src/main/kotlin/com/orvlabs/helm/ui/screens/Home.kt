@@ -87,6 +87,7 @@ fun HomeScreen(nav: NavController) {
         if (s.pending > 0) {
             Banner(trn(R.plurals.home_phones, s.pending), Ph.Phone, Modifier.padding(top = 8.dp).press({ nav.navigate(SettingsR) }))
         }
+        HomeUpdate(Modifier.padding(top = 8.dp))
         Column(Modifier.fillMaxWidth().padding(top = 12.dp), Arrangement.spacedBy(12.dp)) {
             when {
                 snap == null && s.loading -> Card(Modifier.height(190.dp), color = H.c.raise) {}
@@ -159,7 +160,7 @@ private fun Content(s: PulseState, snap: Snapshot, problems: List<Problem>, anom
     if (!down) problems.forEach { ProblemCard(it, nav) }
     Meters(snap, s, Modifier.alpha(if (down || dim) 0.45f else 1f)) { nav.goTab(ServerR) }
     if (!down) HomeVulns()
-    if (!down) HomeMail()
+    if (!down && snap.caps.stalwart) HomeMail()
 }
 
 @OptIn(ExperimentalLayoutApi::class)

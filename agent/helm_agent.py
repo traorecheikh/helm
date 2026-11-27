@@ -152,6 +152,21 @@ def notice_once(key, every, event_type, data):
     publish(event_type, data)
 
 
+def alert_once(service, kind):
+    key, now = f"alert:{service}:{kind}", int(time.time())
+    with db() as con:
+        if con.execute("UPDATE notices SET at=? WHERE key=?", (now, key)).rowcount:
+            return False
+        return con.execute("INSERT OR IGNORE INTO notices VALUES(?,?)", (key, now)).rowcount == 1
+
+
+def clear_alerts(con, service, quiet_since):
+    prefix = f"alert:{service}:"
+    if con.execute("SELECT 1 FROM notices WHERE substr(key, 1, length(?1)) = ?1 AND at > ?2", (prefix, quiet_since)).fetchone():
+        return False
+    return con.execute("DELETE FROM notices WHERE substr(key, 1, length(?1)) = ?1", (prefix,)).rowcount > 0
+
+
 def run(*cmd, timeout=20):
     try:
         return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout).stdout
@@ -1506,10 +1521,12 @@ def uptime_monitor():
                     was = previous.get(name)
                     if state == "down" and was != "down":
                         con.execute("INSERT INTO incidents VALUES(?,?,NULL,?)", (name, now, reason))
-                        if was is not None:
-                            publish("system", {**fr(f"{name} est hors service", reason), "kind": "service_down", "title": f"{name} is down", "message": reason, "service": name})
+                    if state == "down" and alert_once(name, "service_down") and was == "up":
+                        publish("system", {**fr(f"{name} est hors service", reason), "kind": "service_down", "title": f"{name} is down", "message": reason, "service": name})
                     if state == "up" and was == "down":
                         con.execute("UPDATE incidents SET end=? WHERE service=? AND end IS NULL", (now, name))
+                    # Crash loops alternate up/down between polls: "back" only after 120 s without any failure signal.
+                    if state == "up" and clear_alerts(con, name, now - 120):
                         publish("system", {**fr(f"{name} est de retour", "Fonctionne de nouveau"), "kind": "service_up", "title": f"{name} is back", "message": "Running again"})
                     if expires and expires - now < 14 * 86400:
                         notice_once(f"cert:{name}", 86400, "system", {**fr(f"Le certificat de {name} expire bientôt", f"Dans {(expires - now) // 86400} jours"), "kind": "cert_expiring", "title": f"Certificate for {name} expires soon",
@@ -1517,6 +1534,7 @@ def uptime_monitor():
                 gone = set(previous) - set(states)
                 for name in gone:
                     con.execute("DELETE FROM services WHERE name=?", (name,))
+                    clear_alerts(con, name, now)
                 con.execute("DELETE FROM uptime_days WHERE day < date('now','-90 days')")
         except (OSError, ValueError, KeyError, subprocess.SubprocessError, sqlite3.Error) as e:
             print(f"uptime monitor: {e}", file=sys.stderr)
@@ -1557,11 +1575,11 @@ def docker_events():
             attrs = e.get("Actor", {}).get("Attributes", {})
             name = attrs.get("com.docker.swarm.service.name") or attrs.get("name", "container")
             action = e.get("Action", "")
-            if action == "oom":
+            if action == "oom" and alert_once(name, "oom"):
                 publish("system", {**fr(f"{name} a manqué de mémoire", "Le noyau l’a arrêté. Il redémarre si sa politique le permet."), "kind": "oom", "title": f"{name} ran out of memory", "message": "The kernel killed it. It restarts if its policy allows.", "service": name})
-            elif action == "die" and attrs.get("exitCode") not in ("0", "143", None):
+            elif action == "die" and attrs.get("exitCode") not in ("0", "143", None) and alert_once(name, "container_died"):
                 publish("system", {**fr(f"{name} a planté", f"Code de sortie {attrs.get('exitCode')}"), "kind": "container_died", "title": f"{name} crashed", "message": f"Exit code {attrs.get('exitCode')}", "service": name})
-            elif action.startswith("health_status") and "unhealthy" in action:
+            elif action.startswith("health_status") and "unhealthy" in action and alert_once(name, "unhealthy"):
                 publish("system", {**fr(f"{name} est en mauvaise santé", "Son contrôle de santé échoue"), "kind": "unhealthy", "title": f"{name} is unhealthy", "message": "Its health check is failing", "service": name})
         time.sleep(5)
 

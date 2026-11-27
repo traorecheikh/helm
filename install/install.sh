@@ -14,6 +14,9 @@ CONF=/etc/helm-agent
 DATA=/var/lib/helm-agent
 BIN=/usr/local/bin/helm-agent
 UNIT=/etc/systemd/system/helm-agent.service
+UPD_BIN=/usr/local/sbin/helm-agent-update
+UPD_SVC=/etc/systemd/system/helm-agent-update.service
+UPD_TIMER=/etc/systemd/system/helm-agent-update.timer
 MARK=$CONF/install.state
 JAIL=/etc/fail2ban/jail.local
 PORT=9311
@@ -25,6 +28,8 @@ DOMAIN=
 F2B=1
 CS=ask
 TRIVY=1
+UPD=ask
+UPDATE_URL=
 CHANGED=0
 TMP=
 PROXY=none
@@ -326,6 +331,80 @@ install_agent() {
     || die "agent file is not valid Python or python3-cryptography is missing"
   install_file 755 "$TMP/helm_agent.py" "$BIN"
   install_file 644 "$TMP/helm-agent.service" "$UNIT"
+  if cmp -s "$TMP/helm_agent.py" "$BIN"; then printf '%s\n' "$HELM_VERSION" | put 644 "$CONF/version"; fi
+}
+
+setup_update() {
+  url=${UPDATE_URL:-https://github.com/traorecheikh/helm}
+  if [ "$UPD" = ask ] && [ -f "$UPD_TIMER" ]; then say "kept: $UPD_TIMER (--no-update removes it)"; return 0; fi
+  if [ "$UPD" = ask ]; then
+    UPD=0
+    if [ "$YES" = 0 ] && { [ "$DRY" = 1 ] || ( : </dev/tty ) 2>/dev/null; }; then
+      if ask "Install new agent releases from $url automatically (daily check)?"; then UPD=1; fi
+    fi
+  fi
+  if [ "$UPD" = 0 ]; then
+    [ -z "$UPDATE_URL" ] || warn "--update-url ignored: auto-update is off"
+    if [ -f "$UPD_TIMER" ]; then
+      act systemctl disable --now helm-agent-update.timer
+      act rm -f "$UPD_TIMER" "$UPD_SVC" "$UPD_BIN"
+      act systemctl daemon-reload
+    fi
+    say "auto-update: off, re-run this script to install a new agent release"
+    return 0
+  fi
+  { printf '#!/bin/sh\nbase=%s\n' "$url"; cat <<'EOF'; } | put 755 "$UPD_BIN"
+# Written by install.sh --auto-update: installs the latest Helm agent release if it is newer.
+set -eu
+cur=$(cat /etc/helm-agent/version 2>/dev/null || echo 0)
+tag=$(curl -fsS --proto '=https' --tlsv1.2 -m 30 -o /dev/null -w '%{redirect_url}' "$base/releases/latest")
+v=${tag##*/v}
+printf %s "$v" | grep -Eqx '[0-9]+(\.[0-9]+)*' || { echo "no release at $base/releases/latest" >&2; exit 1; }
+if [ "$(printf '%s\n%s\n' "$cur" "$v" | sort -V | tail -n 1)" = "$cur" ]; then echo "helm-agent $cur is up to date"; exit 0; fi
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
+# The release hash is the one helm-release.sh pins in install.sh at the release tag.
+curl -fsSL --proto '=https' --tlsv1.2 -m 60 -o "$tmp/install.sh" "$base/raw/v$v/install/install.sh"
+sha=$(sed -n 's/^: "\${HELM_SHA256:=\([0-9a-f]\{64\}\)}"$/\1/p' "$tmp/install.sh")
+[ -n "$sha" ] || { echo "no HELM_SHA256 in install.sh at v$v, nothing installed" >&2; exit 1; }
+curl -fsSL --proto '=https' --tlsv1.2 -m 300 -o "$tmp/agent.tgz" "$base/releases/download/v$v/helm-agent-$v.tar.gz"
+printf '%s  %s\n' "$sha" "$tmp/agent.tgz" | sha256sum -c - >/dev/null || { echo "SHA-256 mismatch for v$v, nothing installed" >&2; exit 1; }
+tar -xzf "$tmp/agent.tgz" --no-same-owner -C "$tmp" helm_agent.py helm-agent.service
+python3 -I -c 'import ast, sys; ast.parse(open(sys.argv[1]).read()); import cryptography' "$tmp/helm_agent.py"
+cp -p /usr/local/bin/helm-agent /usr/local/bin/helm-agent.bak
+cp -p /etc/systemd/system/helm-agent.service /etc/systemd/system/helm-agent.service.bak
+install -m 755 "$tmp/helm_agent.py" /usr/local/bin/helm-agent
+install -m 644 "$tmp/helm-agent.service" /etc/systemd/system/helm-agent.service
+systemctl daemon-reload
+systemctl restart helm-agent
+printf '%s\n' "$v" >/etc/helm-agent/version
+echo "helm-agent $cur -> $v"
+EOF
+  put 644 "$UPD_SVC" <<EOF
+[Unit]
+Description=Install newer Helm agent releases
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=$UPD_BIN
+EOF
+  put 644 "$UPD_TIMER" <<EOF
+[Unit]
+Description=Daily Helm agent release check
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
+  act systemctl daemon-reload
+  act systemctl enable --now helm-agent-update.timer
+  say "auto-update: daily check of $url/releases/latest, log: journalctl -u helm-agent-update"
 }
 
 start_service() {
@@ -381,6 +460,7 @@ uninstall() {
   ask "Remove the Helm agent and its files from this server?" || die "cancelled"
   act systemctl disable --now helm-agent || true
   act systemctl stop helm-quiet-reboot.timer helm-quiet-reboot.service || true
+  act systemctl disable --now helm-agent-update.timer 2>/dev/null || true
   bk=/var/backups/helm-agent-$(date +%Y%m%d-%H%M%S)
   if [ -d "$DATA" ] || [ -d "$CONF" ]; then
     act mkdir -m 700 -p "$bk"
@@ -411,7 +491,7 @@ uninstall() {
   for p in caddy crowdsec trivy; do
     if grep -qsx "pkg_$p=1" "$MARK" && ask "Purge package $p installed by this installer?"; then act apt-get purge -y "$p"; fi
   done
-  act rm -f "$UNIT" "$BIN" "$BIN.bak" "$UNIT.bak"
+  act rm -f "$UNIT" "$BIN" "$BIN.bak" "$UNIT.bak" "$UPD_TIMER" "$UPD_SVC" "$UPD_BIN"
   act rm -rf "$CONF" "$DATA"
   act systemctl daemon-reload
   say "removed. Other packages (python3, fail2ban, nftables...) were left in place."
@@ -425,6 +505,13 @@ while [ $# -gt 0 ]; do
     --no-fail2ban) F2B=0 ;;
     --no-crowdsec) CS=0 ;;
     --no-trivy) TRIVY=0 ;;
+    --auto-update) UPD=1 ;;
+    --no-update) UPD=0 ;;
+    --update-url)
+      [ $# -ge 2 ] || die "--update-url needs a value"
+      UPDATE_URL=${2%/}
+      shift
+      ;;
     --domain)
       [ $# -ge 2 ] || die "--domain needs a value"
       DOMAIN=$(printf %s "$2" | tr '[:upper:]' '[:lower:]')
@@ -435,6 +522,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 [ -z "$DOMAIN" ] || printf %s "$DOMAIN" | grep -Eq '^([a-z0-9]([a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,}$' || die "invalid domain: $DOMAIN"
+[ -z "$UPDATE_URL" ] || printf %s "$UPDATE_URL" | grep -Eqx 'https://[A-Za-z0-9.-]+(:[0-9]+)?(/[A-Za-z0-9._~-]+)*' || die "invalid --update-url (https only): $UPDATE_URL"
 trap 'rm -rf "$TMP"' EXIT
 
 preflight
@@ -449,6 +537,7 @@ setup_fail2ban
 setup_crowdsec
 setup_patching
 setup_trivy
+setup_update
 expose
 start_service
 report

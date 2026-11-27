@@ -15,6 +15,9 @@ so a domain is required to use it from a phone.
     --no-fail2ban   do not install or configure fail2ban
     --no-crowdsec   do not offer CrowdSec
     --no-trivy      do not install Trivy (the vulnerability audit stays off)
+    --auto-update   daily timer installs a newer agent release (SHA-256 checked), restarts it
+    --no-update     no auto-update, removes an existing timer (no flag: asked if interactive, else off)
+    --update-url URL releases of another repo (default https://github.com/traorecheikh/helm)
     --yes           answer yes to confirmations (never opts in to CrowdSec)
 
 `HELM_DOKPLOY_KEY=<key>` (env, never printed) sets the Dokploy API key:

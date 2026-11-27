@@ -15,7 +15,7 @@ import kotlinx.serialization.json.decodeFromJsonElement
 import kotlinx.serialization.json.jsonPrimitive
 
 @Serializable
-data class Caps(val platform: String = "dokploy", val dokploy: Boolean = true, val coolify: Boolean = false, val docker: Boolean = true) {
+data class Caps(val platform: String = "dokploy", val dokploy: Boolean = true, val coolify: Boolean = false, val docker: Boolean = true, val stalwart: Boolean = false) {
     fun pick(chosen: String?) = chosen?.takeIf { it == "dokploy" && dokploy || it == "coolify" && coolify } ?: platform
 }
 
@@ -32,6 +32,7 @@ interface Platform {
 
 val Plat: Platform get() = if (Repo.state.value.platform == "coolify") Coolify else Dokploy
 val dokployActive get() = Repo.state.value.platform == "dokploy"
+val mailActive get() = Repo.state.value.snap?.caps?.stalwart == true
 
 @Serializable internal data class CProject(val uuid: String = "", val name: String = "", val description: String? = null)
 

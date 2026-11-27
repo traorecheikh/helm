@@ -63,6 +63,18 @@ class AgentTest(Base):
             self.assertEqual(caps["version"], agent.VERSION)
             self.assertTrue(all(isinstance(caps[k], bool) for k in caps if k not in ("platform", "version")))
 
+    def test_crash_loop_alerts_once_until_quiet_recovery(self):
+        self.assertTrue(agent.alert_once("web", "container_died"))
+        self.assertFalse(agent.alert_once("web", "container_died"))
+        self.assertTrue(agent.alert_once("web", "oom"))
+        self.assertTrue(agent.alert_once("web-2", "container_died"))
+        with agent.db() as con:
+            self.assertFalse(agent.clear_alerts(con, "web", int(time.time()) - 120))
+            self.assertTrue(agent.clear_alerts(con, "web", int(time.time()) + 1))
+            self.assertFalse(agent.clear_alerts(con, "web", int(time.time()) + 1))
+        self.assertTrue(agent.alert_once("web", "container_died"))
+        self.assertFalse(agent.alert_once("web-2", "container_died"))
+
     def test_missing_dokploy_key_is_a_clean_error(self):
         status, body = self.call("GET", "/dokploy/project.all")
         self.assertEqual((status, body), (503, {"error": "Dokploy is not configured"}))

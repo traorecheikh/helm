@@ -155,7 +155,7 @@ internal fun HealthTab(host: HostInfo?, snap: Snapshot?) {
     )
     var shown by remember { mutableStateOf(Sec.Updates) }
     var visible by remember { mutableStateOf(false) }
-    val items = Sec.entries.filter { it != Sec.Backups || dokployActive }.map { sec ->
+    val items = Sec.entries.filter { (it != Sec.Backups || dokployActive) && (it != Sec.Mail || mailActive) }.map { sec ->
         when (sec) {
             Sec.Updates -> ck.updates.item(sec, ::updatesVt)
             Sec.Certs -> ck.certs.item(sec, ::certsVt)

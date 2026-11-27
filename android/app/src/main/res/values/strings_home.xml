@@ -14,4 +14,5 @@
         <item quantity="other">%1$d phones</item>
     </plurals>
     <string name="home_watch">Watch</string>
+    <string name="home_update">Helm %1$s available</string>
 </resources>
